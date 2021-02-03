@@ -1,0 +1,43 @@
+{
+    "bg": "https://ovicio.com.br/wp-content/uploads/2020/11/20201105-rick-and-morty-season-4-episode-2.jpg",
+    "title": "Rick Quiz",
+    "description": "Quiz sobre rick and morthy",
+    "questions": [
+        {
+            "image": "",
+            "title": "Questão 1",
+            "descriptions": "Descrição da questao",
+            "answer": 1,
+            "alternatives": [
+                "Alternativa A",
+                "Alternativa B",
+                "Alternativa C"
+            ]
+        },
+        {
+            "image": "",
+            "title": "Questão 2",
+            "descriptions": "Descrição da questao",
+            "answer": 1,
+            "alternatives": [
+                "Alternativa A",
+                "Alternativa B",
+                "Alternativa C"
+            ]
+        }
+    ],
+    "external": [
+        ""
+    ],
+    "theme": {
+        "colors": {
+            "primary": "#9bd8d9",
+            "secondary": "#d9cbbe",
+            "mainBg": "#e1cc4f",
+            "contrastText": "#FFFF",
+            "wrong": "#9f6365",
+            "success": "#9bd8d9"
+        },
+        "borderRadius": "4px"
+    }
+}
