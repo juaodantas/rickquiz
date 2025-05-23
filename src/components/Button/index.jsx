@@ -26,8 +26,8 @@ const Button = styled.button`
 `;
 
 Button.propTypes = {
-    type: PropTypes.oneOf(['submit', 'type', 'button']).isRequired,
-    children: PropTypes.node.isRequired,
+  type: PropTypes.oneOf(['submit', 'type', 'button']).isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Button;

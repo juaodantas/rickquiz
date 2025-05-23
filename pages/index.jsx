@@ -1,19 +1,23 @@
-import React from 'react';
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
+import Head from "next/head";
+import { useState } from "react";
 
-import db from '../db.json'
-import Widget from '../src/components/Widget'
-import GitHubCorner from '../src/components/GitHubCorner'
-import QuizBackground from '../src/components/QuizBackground'
-import Input from '../src/components/Input'
-import Button from '../src/components/Button'
-import QuizContainer from '../src/components/QuizContainer'
-
+import db from "../db.json";
+import Widget from "../src/components/Widget";
+import GitHubCorner from "../src/components/GitHubCorner";
+import QuizBackground from "../src/components/QuizBackground";
+import Input from "../src/components/Input";
+import Button from "../src/components/Button";
+import QuizContainer from "../src/components/QuizContainer";
 
 export default function Home() {
   const router = useRouter();
-  const [name, setName] = React.useState('');
+  const [name, setName] = useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    router.push("/quiz");
+  }
 
   return (
     <QuizBackground backgroundImage={db.bg}>
@@ -27,16 +31,10 @@ export default function Home() {
             <h1>Rick and Morty</h1>
           </Widget.Header>
           <Widget.Content>
-            <form onSubmit={function (infosDoEvento) {
-              infosDoEvento.preventDefault();
-              router.push(`/quiz?name=${name}`);
-              console.log('Fazendo uma submissão por meio do react');
-            }}
-            >
+            <form onSubmit={handleSubmit}>
               <Input
                 name="nomeDoUsuario"
-                // State
-                onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
+                onChange={(event) => setName(event.target.value)}
                 placeholder="Diz ai seu nome"
                 value={name}
               />
@@ -50,7 +48,6 @@ export default function Home() {
         <Widget>
           <Widget.Content>
             <h1>Quizes da Galera</h1>
-
             <p>lorem ipsum dolor sit amet...</p>
           </Widget.Content>
         </Widget>

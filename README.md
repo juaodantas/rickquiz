@@ -1,78 +1,91 @@
-# Example app with styled-components
+# 🌌 Rick and Morty Quiz
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/zeit/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
+![Rick and Morty](https://rollingstone.com.br/media/_versions/rick-morty-season4-finale-reprod_widelg.jpg)
 
-For this purpose we are extending the `<Document />` and injecting the server side rendered styles into the `<head>`, and also adding the `babel-plugin-styled-components` (which is required for server side rendering). Additionally we set up a global [theme](https://www.styled-components.com/docs/advanced#theming) for styled-components using NextJS custom [`<App>`](https://nextjs.org/docs/advanced-features/custom-app) component.
+## 📝 Sobre o Projeto
 
-## Deploy your own
+O Rick and Morty Quiz é uma aplicação web interativa desenvolvida com Next.js que testa seus conhecimentos sobre uma das séries de animação mais populares da atualidade. O quiz contém 10 questões desafiadoras que exploram diferentes aspectos do multiverso de Rick and Morty.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+Diponivel em: https://rickquiz.vercel.app/
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-styled-components&project-name=with-styled-components&repository-name=with-styled-components)
+## ✨ Funcionalidades
 
-## How to use
+- 🎯 10 questões sobre a série
+- 🎨 Interface moderna e responsiva
+- ⚡ Feedback instantâneo das respostas
+- 📊 Pontuação final detalhada
+- 🎭 Temas e cores inspirados na série
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## 🛠️ Tecnologias Utilizadas
+
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [PropTypes](https://www.npmjs.com/package/prop-types)
+
+## 🚀 Como Executar
+
+1. Clone o repositório:
 
 ```bash
-npx create-next-app --example with-styled-components with-styled-components-app
-# or
-yarn create next-app --example with-styled-components with-styled-components-app
+git clone https://github.com/juaodantas/rickquiz.git
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+2. Instale as dependências:
 
-### Try it on CodeSandbox
-
-[Open this example on CodeSandbox](https://codesandbox.io/s/github/vercel/next.js/tree/canary/examples/with-styled-components)
-
-### Notes
-
-When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `next/link` within a styled-component, the [as](https://styled-components.com/docs/api#as-polymorphic-prop) prop provided by `styled` will collide with the Link's `as` prop and cause styled-components to throw an `Invalid tag` error. To avoid this, you can either use the recommended [forwardedAs](https://styled-components.com/docs/api#forwardedas-prop) prop from styled-components or use a different named prop to pass to a `styled` Link.
-
-<details>
-<summary>Click to expand workaround example</summary>
-<br />
-
-**components/StyledLink.js**
-
-```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
-
-const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
-
-export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: #40a9ff;
-  }
-
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
+```bash
+cd rickquiz
+npm install
 ```
 
-**pages/index.js**
+3. Execute o projeto:
 
-```javascript
-import StyledLink from '../components/StyledLink'
-
-export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
+```bash
+npm run dev
 ```
 
-</details>
+4. Acesse no navegador:
+
+```
+http://localhost:3000
+```
+
+## 🎮 Como Jogar
+
+1. Na tela inicial, clique em "Começar Quiz"
+2. Leia cada pergunta cuidadosamente
+3. Selecione uma das alternativas disponíveis
+4. Clique em "Confirmar" para enviar sua resposta
+5. Ao final, confira sua pontuação e quais questões você acertou
+
+## 🎨 Layout e Design
+
+O projeto utiliza um esquema de cores inspirado na série:
+
+- Primary: #9bd8d9
+- Secondary: #d9cbbe
+- MainBg: #e1cc4f
+- ContrastText: #FFFFFF
+- Text: #000000
+
+## 🤝 Contribuindo
+
+Contribuições são sempre bem-vindas! Se você tem alguma sugestão ou correção, sinta-se à vontade para:
+
+1. Fazer um fork do projeto
+2. Criar uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abrir um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👨‍💻 Autor
+
+Feito por João Dantas - [GitHub](https://github.com/juaodantas)
+
+---
+
+Wubba Lubba Dub Dub! 🚀
